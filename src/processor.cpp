@@ -6,7 +6,7 @@
 float Processor::Utilization() { 
     std::vector<std::string> cpu_util = LinuxParser::CpuUtilization();
     float usage;
-    for (auto i=0;i<cpu_util.size();i++) {
+    for (int i=0;i<(int)cpu_util.size();i++) {
         if (i!=LinuxParser::kGuest_ and i!=LinuxParser::kGuestNice_) {
             total_jiffies += std::stof(cpu_util[i]);
         }
