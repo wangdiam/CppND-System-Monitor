@@ -15,7 +15,7 @@ int Process::Pid() { return _pid; }
 // TODO: Return this process's CPU utilization
 float Process::CpuUtilization() { 
     long int hz = sysconf(_SC_CLK_TCK);
-    return ((float)(LinuxParser::ActiveJiffies(_pid)/hz)/(LinuxParser::UpTime(_pid)))/100;
+    return ((float)(LinuxParser::ActiveJiffies(_pid)/hz)/(LinuxParser::UpTime(_pid)));
 }
 
 string Process::Command() { return LinuxParser::Command(_pid); }
